@@ -10,7 +10,7 @@ addEventListener("fetch", (e: FetchEvent) => {
       const [user, pw] = atob(match[1]).split(":");
       for (const [u, p] of Object.entries(userPasswordTable)) {
         if (user === u && pw == p) {
-          e.respondWith(new Response(`hello ${id}!`));
+          e.respondWith(new Response(`hello ${user}!`));
           return;
         }
       }
